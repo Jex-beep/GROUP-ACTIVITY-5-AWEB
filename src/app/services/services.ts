@@ -22,27 +22,27 @@ export class Services {
     {
       title: '150-Point Inspection',
       description: 'Every vehicle undergoes a meticulous check covering mechanical, electrical, safety, and cosmetic components for your peace of mind.',
-      icon: '✅'
+      icon: ''
     },
     {
       title: 'Flexible Financing Options',
       description: 'We work with a wide network of lenders to secure the best loan rates and terms, regardless of your credit history.',
-      icon: '💵'
+      icon: ''
     },
     {
       title: 'Trade-In Valuations',
       description: 'Get a quick, fair, and competitive appraisal for your current vehicle to put towards your next purchase.',
-      icon: '🔄'
+      icon: ''
     },
     {
       title: 'Extended Warranty Plans',
       description: 'Protect your investment long after you drive off the lot with our affordable extended powertrain and comprehensive coverage packages.',
-      icon: '🛡️'
+      icon: ''
     },
     {
       title: 'Vehicle History Reports',
       description: 'Complete transparency is guaranteed. We provide complimentary CarFax/AutoCheck reports with every car.',
-      icon: '📜'
+      icon: ''
     }
   ];
 

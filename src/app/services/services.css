@@ -1,27 +1,33 @@
 :root {
-    --primary-color: #000000;
-    --accent-color: #c40000;
+    --primary-color: #ffffff;
+    --accent-color: #ff4b2b;
     --text-color: #1f2937;
-    --bg-color: #ffffff;
-    --gray-bg: #f5f5f5;
-    --shadow-color: rgba(0, 0, 0, 0.08);
+    --bg-color: rgba(255, 255, 255, 0.05);
+    --gray-bg: rgba(255, 255, 255, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.15);
 }
 
+/* CONTAINER */
 .services-container {
-    padding: 60px 20px;
+    padding: 80px 20px;
     font-family: 'Inter', Arial, sans-serif;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
     text-align: center;
 }
 
-/* TOP HEADER IMAGE STYLE */
+/* TOP BANNER */
 .top-banner {
     width: 100%;
-    height: 260px;
+    max-width: 1200px;
+    height: 300px;
     border-radius: 20px;
     overflow: hidden;
-    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .top-banner img {
@@ -32,89 +38,92 @@
 
 /* TITLE */
 .services-container h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
     color: #000;
-    font-size: 2.2rem;
-    margin-bottom: 25px;
-    font-weight: 700;
+    margin-bottom: 15px;
 }
 
 /* SUBTITLE */
 .subtitle {
-    font-size: 1.1rem;
-    color: #6b7280;
-    margin-bottom: 45px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #555;
+    letter-spacing: 0.5px;
+    max-width: 800px;
+    line-height: 1.5;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 /* GRID */
 .services-grid {
-    display: flex;
-    justify-content: center;
-    gap: 22px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-items: center;
+    width: 100%;
 }
 
-/* CARD */
+/* SERVICE CARD */
 .service-card {
-    background: var(--bg-color);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 22px;
-    width: 310px;
     padding: 40px 30px;
-    box-shadow: 0 10px 25px var(--shadow-color);
-    transition: 0.3s;
-}
-
-/* ICON CONTAINER — matches sample black rounded square */
-.service-icon {
-    width: 60px;
-    height: 60px;
-    background: #000;
+    width: 280px; /* kept original width */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
     color: #fff;
-    font-size: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    margin: 0 auto 22px auto;
+    text-align: center;
 }
 
-/* TITLE */
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.2);
+}
+
+
+/* CARD TITLE */
 .service-card h2 {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
+    font-weight: 700;
     color: #000;
-    font-weight: 600;
     margin-bottom: 12px;
 }
 
-/* DESCRIPTION */
+/* CARD DESCRIPTION */
 .service-card p {
-    font-size: 0.97rem;
-    color: #555;
-    line-height: 1.55;
-    margin-bottom: 25px;
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
-/* "MORE" link */
+/* MORE LINK */
 .more-link {
-    font-weight: 700;
+    font-weight: 600;
     font-size: 0.95rem;
-    color: #000;
+    color: var(--accent-color);
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .more-link:hover {
-    opacity: 0.6;
+    color: #ff6b50;
 }
 
-/* CARD HOVER */
-.service-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 14px 35px rgba(0,0,0,0.12);
-}
-
-/* Mobile */
+/* MOBILE */
 @media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
     .service-card {
-        width: 100%;
-        max-width: 340px;
+        width: 280px; /* keep same width even on mobile */
     }
 }
