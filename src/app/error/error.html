@@ -1,10 +1,19 @@
 <div class="error-container">
     <div class="error-box">
-        <h1>{{ errorCode }}</h1>
-        <h2>Oops! {{ errorMessage }}</h2>
-        <p>The page you requested could not be found. It might have been moved, deleted, or you might have mistyped the address.</p>
+    
+        <div class="error-illustration">
+            <img src="https://cdni.iconscout.com/illustration/premium/thumb/error-404-illustration-svg-download-png-5501655.png" 
+                 alt="Illustration of 404 Error" 
+                 style="width: 100%; max-width: 350px; height: auto;">
+        </div>
         
-        <button (click)="goToHome()">Go to Home Page</button>
+        <p class="error-message">
+            The page you requested could not be found.<br>
+            Please check the address or try navigating back to the home page.
+        </p>
         
+        <div class="error-actions">
+            <button class="btn primary-btn" (click)="goToHome()">Go to Home Page</button>
+        </div>
     </div>
 </div>
