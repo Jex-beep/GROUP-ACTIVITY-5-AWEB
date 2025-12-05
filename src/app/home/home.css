@@ -35,7 +35,7 @@
   justify-content: center;
   align-items: center;
   color: #fff;
-  margin-bottom: 0;             /* FIX: removed extra gap */
+  margin-bottom: 0;             
 }
 
 .hero-overlay {
@@ -189,13 +189,13 @@
   margin-right: 5%;
   display: flex;
   flex-direction: column;
-  gap: 10px;                    /* FIX: tighter spacing */
+  gap: 10px;                   
 }
 
 .footer-logo {
   width: 120px;
   height: auto;
-  margin-bottom: 10px;          /* FIX: reduced gap */
+  margin-bottom: 10px;         
 }
 
 /* Contact Text */

@@ -1,11 +1,247 @@
-/* Style for the row when it is selected */
-.selected-row {
-  background-color: #e0f7fa; /* A light blue highlight */
-  font-weight: bold;
-  cursor: pointer; /* Change cursor to indicate interactivity */
+
+
+
+
+
+
+
+
+/* Color Palette */
+:root {
+    --primary-red: #a30000; /* M&J Primary Red */
+    --primary-black: #000;
+    --secondary-grey: #f9f9f9; /* Light background for sections */
+    --text-light: #fff;
+    --text-dark: #333;
+    --border-color: #e0e0e0;
 }
 
-/* Optional: Add a subtle hover effect */
+/* --- BASE CONTAINER & HEADING --- */
+.employee-directory-container {
+    padding: 30px 20px;
+    max-width: 1400px; 
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--text-light);
+}
+
+h2 {
+    color: var(--primary-black);
+    border-bottom: 4px solid var(--primary-red);
+    padding-bottom: 12px;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+    font-size: 2.2em;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* --- SEARCH BAR SECTION (Add this if you are implementing search) --- */
+/*
+.search-bar {
+    margin-bottom: 30px;
+}
+.search-bar input[type="text"] {
+    width: 100%;
+    padding: 14px 20px;
+    border: 2px solid var(--primary-red);
+    border-radius: 30px; 
+    font-size: 1.1em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+*/
+
+/* --- ADD NEW EMPLOYEE FORM CONTAINER --- */
+.add-employee-section {
+    border: 1px solid var(--border-color);
+    background-color: var(--secondary-grey);
+    padding: 30px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.add-employee-section h3 {
+    color: var(--primary-red);
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 1.8em;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+/* --- FORM INPUTS (Designed for Grid Layout) --- */
+.add-employee-form-grid {
+    display: grid;
+    /* Creates a responsive grid of at least 280px wide columns */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 20px 40px;
+}
+
+.add-employee-form-grid p {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.add-employee-section label {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+    font-size: 0.95em;
+    text-transform: uppercase;
+}
+
+.add-employee-section input,
+.add-employee-section select {
+    /* Base appearance */
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: var(--text-light); 
+    
+    /* Focus and Transition */
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Focus State (Red line on focus) */
+.add-employee-section input:focus,
+.add-employee-section select:focus {
+    border-color: var(--primary-red);
+    box-shadow: 0 0 0 3px rgba(163, 0, 0, 0.1); 
+    outline: none;
+}
+
+/* Submit Button Row */
+.submit-row {
+    grid-column: 1 / -1; /* Spans across all columns */
+    margin-top: 25px;
+    text-align: center;
+}
+
+.add-employee-section button[type="submit"] {
+    background-color: var(--primary-black);
+    color: var(--text-light);
+    border: none;
+    padding: 14px 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s, transform 0.1s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.add-employee-section button[type="submit"]:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+
+/* --- EMPLOYEE DATA TABLE --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    background-color: var(--text-light);
+    border-radius: 8px;
+    overflow: hidden; 
+}
+
+table th {
+    background-color: var(--primary-red);
+    color: var(--text-light);
+    padding: 14px 18px;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+table td {
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-dark);
+    font-size: 0.9em;
+}
+
+/* Row Styling */
+table tbody tr {
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Hover Effect */
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Selected Row Highlight */
+.selected-row {
+    background-color: #ffe6e6 !important; /* Soft red selection */
+    font-weight: bold;
+    border-left: 5px solid var(--primary-red); 
+}
+
+/* Status/Salary Indicators (Pill Tags) */
+table td p {
+    margin: 0;
+    padding: 4px 8px;
+    border-radius: 15px; 
+    display: inline-block;
+    font-weight: 600;
+    font-size: 0.85em;
+}
+
+/* Color coding for Status */
+table td p[style*="green"] { background-color: #e8f5e9; color: #388e3c; } /* Regular */
+table td p[style*="orange"] { background-color: #fff8e1; color: #ff8f00; } /* Contractual */
+table td p[style*="blue"] { background-color: #e3f2fd; color: #1e88e5; } /* Probationary */
+
+/* Price/Salary Tag */
+table td p:last-child {
+    background-color: var(--primary-red);
+    color: var(--text-light);
+    padding: 4px 10px;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 900px) {
+    .employee-directory-container {
+        overflow-x: auto;
+    }
+    table {
+        min-width: 1000px;
+    }
+}
+
+@media (max-width: 768px) {
+    .add-employee-form-grid {
+        grid-template-columns: 1fr; /* Single column layout on mobile */
+    }
+
+    .submit-row {
+        grid-column: 1 / 2;
+    }
+}
+
+.selected-row {
+  background-color: #e0f7fa;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
 tr:hover {
     background-color: #f1f1f1;
 }
