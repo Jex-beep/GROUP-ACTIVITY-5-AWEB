@@ -1,2 +1,82 @@
-<h1>Welcome to MJ Quality Cars</h1>
-<p>This is our landing page</p>
+    <!-- Hero Section: Updated for Homepage Title Style -->
+    <header class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-text-container">
+            <h1>M&J</h1>
+            <h2>Quality Used Cars</h2>
+            <p>Where Quality Meets Affordability</p>
+        </div>
+    </header>
+
+    <main class="home-content-page">
+        <!-- About Us Section -->
+        <section class="about-us-section">
+            <div class="content-container">
+                <h3>about us</h3>
+                <p>
+                    Based in the heart of Pampanga and serving our neighbors in Angeles City and
+                    Mabalacat City, <strong>M & J Quality Used Cars</strong> is your trusted local source for
+                    acquiring reliable second-hand vehicles.
+                </p>
+            </div>
+        </section>
+
+        <!-- Services/Links Section -->
+        <section class="services-links-section">
+            <div class="content-container">
+                <h3>Check out our services</h3>
+                <div class="link-boxes-container">
+                    <!-- RouterLink placeholders for Angular navigation -->
+                    <a routerLink="/employees" class="link-box employee-bg" aria-label="Go to Employee Directory">
+                        <div class="link-overlay">
+                            <span>Employee Directory</span>
+                        </div>
+                    </a>
+                    <a routerLink="/about" class="link-box about-bg" aria-label="Go to About Us page">
+                        <div class="link-overlay">
+                            <span>About Us</span>
+                        </div>
+                    </a>
+                    <a routerLink="/services" class="link-box services-bg" aria-label="Go to Services page">
+                        <div class="link-overlay">
+                            <span>Our Services</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Contact/Form Section -->
+    <section class="contact-form-section">
+        
+        <!-- Left Column: Logo and Contact Info -->
+        <div class="contact-left-column">
+            <!-- Placeholder for MJ logo -->
+            <img src="/companylogo.jpg" alt="M J Logo" class="footer-logo">
+
+            <div class="contact-info">
+                <h4>Your Road to Reliability Starts Here</h4>
+                <h5>Reach Out to Us, Today!</h5>
+                <p>Purok 3, Sta. Ines, Mabalacat City, Pampanga</p>
+                <p>mjqualitycars@gmail.com</p>
+            </div>
+        </div>
+
+        <!-- Right Column: Contact Form -->
+        <div class="contact-form">
+            <form>
+                <!-- Full Name -->
+                <input type="text" name="fullName" placeholder="Full Name" required>
+                
+                <!-- Email Address -->
+                <input type="email" name="emailAddress" placeholder="Email Address" required>
+                
+                <!-- Concern / Message -->
+                <textarea name="concern" placeholder="Concerns"></textarea>
+                
+                <!-- Submit Button -->
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        

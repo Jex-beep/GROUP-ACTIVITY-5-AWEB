@@ -1,25 +1,84 @@
-<div class="about-container">
-    <div class="about-box">
-        <h1>Our Commitment to Quality</h1>
+<header class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-text-container">
+            <h1>About Us</h1> 
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="home-content-page">
+        <div class="content-container">
+            <div class="two-column-layout">
+                
+                <!-- Left Column: Our Roots -->
+                <div class="content-block">
+                    <h3 class="block-heading">our roots</h3>
+                    
+                    <!-- Grey Box Image Placeholder -->
+                    <img src="https://placehold.co/550x280/ccc/ccc?text=OUR+ROOTS+IMAGE" alt="Placeholder image representing our roots and community focus">
+                    
+                    <p>
+                        Established in {{ foundedYear }}, our mission has always been to provide customers with the <strong>highest quality used vehicles</strong> without the stress or uncertainty typically associated with pre-owned car shopping.
+                        <br><br>
+                        We are proud members of the local community, and we believe in building 
+                        relationships, not just making sales. When you choose M & J Quality Used Cars, 
+                        you are choosing a local partner dedicated to helping you achieve your driving 
+                        dreams with integrity and ease.
+                    </p>
+                </div>
+
+                <!-- Right Column: Our Commitment and Promise -->
+                <div class="content-block">
+                    <h3 class="block-heading">our commitment and promise</h3>
+                    
+                    <!-- Grey Box Image Placeholder -->
+                    <img src="https://placehold.co/550x280/ccc/ccc?text=OUR+COMMITMENT+IMAGE" alt="Placeholder image representing commitment and quality assurance">
+                    
+                    <p>
+                        {{ companyMotto }}
+                        <br><br>
+                        For us, 'Quality' isn't just a word; it's our promise to you. We want you to 
+                        feel secure knowing that the car you purchase is reliable enough for the school 
+                        run, dependable enough for your commute and ready to safety take you wherever 
+                        life leads.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Contact/Form Section -->
+    <section class="contact-form-section">
         
-        <p class="motto">"{{ companyMotto }}"</p>
+        <!-- Left Column: Logo and Contact Info -->
+        <div class="contact-left-column">
+            <!-- Placeholder for MJ logo -->
+            <img src="/companylogo.jpg" alt="M J Logo" class="footer-logo">
+
+            <div class="contact-info">
+                <h4>Your Road to Reliability Starts Here</h4>
+                <h5>Reach Out to Us, Today!</h5>
+                <p>Purok 3. Sta. Ines, Mabalacat City, Pampanga</p>
+                <p>mjusedcars@gmail.com</p>
+            </div>
+        </div>
+
+        <!-- Right Column: Contact Form -->
+        <div class="contact-form">
+            <form (submit)="$event.preventDefault()"> <!-- Use (submit) to prevent default form submission in Angular context -->
+                <!-- Full Name -->
+                <input type="text" name="fullName" placeholder="Full Name" required>
+                
+                <!-- Email Address -->
+                <input type="email" name="emailAddress" placeholder="Email Address" required>
+                
+                <!-- Concern / Message -->
+                <textarea name="concern" placeholder="Concern"></textarea>
+                
+                <!-- Submit Button -->
+                <button type="submit">Submit</button>
+            </form>
+        </div>
         
-        <p>
-            Established in {{ foundedYear }}, our mission has always been to provide customers with the **highest quality used vehicles** without the stress or uncertainty typically associated with pre-owned car shopping.
-        </p>
-        
-        <p>Every car in our inventory undergoes a rigorous **150-point inspection** by certified mechanics. We ensure transparency by providing comprehensive vehicle history reports (CarFax/AutoCheck) for every model we sell.</p>
-        
-        <h3>Why Choose Us?</h3>
-        <ul>
-            <li>**Certified Quality: All vehicles are thoroughly inspected and reconditioned.</li>
-            <li>**Transparent Pricing: No hidden fees or pressure tactics.</li>
-            <li>**Customer Focus: Dedicated support from inquiry to purchase and beyond.</li>
-            <li>**Peace of Mind: Optional extended warranties available for all models.</li>
-        </ul>
-        
-        <p class="call-to-action">
-            Browse our directory of available vehicles or contact us today to learn more about our commitment to excellence!
-        </p>
-    </div>
-</div>
+    </section>

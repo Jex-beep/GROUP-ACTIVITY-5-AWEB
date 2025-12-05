@@ -1,69 +1,219 @@
-.about-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; 
-    min-height: 70vh;
-    padding-top: 50px;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-}
 
-.about-box {
-    background-color: #ffffff;
-    padding: 30px 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    max-width: 700px;
-    width: 100%;
-}
+ :root {
+        --primary-red: #a30000;
+        --primary-black: #000;
+        --text-light: #fff;
+        --text-dark: #333;
+        --grey-box: #ccc;
+    }
 
-.about-box h1 {
-    color: #004d99; /* A darker blue for professional look */
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 10px;
-    margin-bottom: 25px;
-    text-align: center;
-}
+    .home-content-page {
+        width: 100%;
+        overflow-x: hidden;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: var(--text-dark);
+    }
 
-.about-box h3 {
-    color: #333;
-    margin-top: 30px;
-    margin-bottom: 15px;
-}
+    .content-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+    }
 
-.about-box p {
-    line-height: 1.6;
-    color: #555;
-    margin-bottom: 15px;
-}
+    /* --- Hero Section (User's foundation CSS) --- */
+    .hero-section {
+        position: relative;
+        height: 500px;
+        /* Placeholder URL for herobanner.jpg */
+        background-image: url('/herobanner.jpg');
+        background-size: cover;
+        background-position: center center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+    }   
 
-.motto {
-    font-style: italic;
-    font-weight: bold;
-    color: #cc0000; 
-    text-align: center;
-    font-size: 1.1em;
-    margin-bottom: 30px;
-}
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); 
+    }
 
-.about-box ul {
-    list-style-type: '→ '; 
-    margin-left: 20px;
-    padding-left: 0;
-    margin-bottom: 25px;
-}
+    .hero-text-container {
+        padding-left: 0;
+        padding-right: 0;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        padding: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
 
-.about-box ul li {
-    margin-bottom: 8px;
-    color: #444;
-}
+    /* Adjusted H1/H2 for the "About Us" page title seen in the screenshot */
+    .hero-text-container h1 {
+        font-size: 3.5rem; /* Smaller for simple page title */
+        font-weight: normal;
+        margin-bottom: 0;
+    }
 
-.call-to-action {
-    text-align: center;
-    font-size: 1.1em;
-    font-weight: bold;
-    color: #004d99;
-    margin-top: 30px;
-    padding-top: 15px;
-    border-top: 1px dashed #ccc;
-}
+    .hero-text-container h2 {
+        display: none; /* Hide subtitle for this simple layout */
+    }
+    .hero-text-container p {
+        display: none; /* Hide paragraph for this simple layout */
+    }
+    /* End Hero Section */
+
+
+    /* --- New Content Section CSS (The main request) --- */
+
+    .two-column-layout {
+        display: flex;
+        gap: 40px;
+        justify-content: space-between;
+    }
+
+    .content-block {
+        flex: 1;
+        max-width: calc(50% - 20px); 
+        background-color: #fff; 
+        padding: 30px; 
+        border-radius: 8px; 
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); 
+    }
+
+    .block-heading {
+        font-size: 1.6rem;
+        font-weight: 900;
+        text-transform: uppercase; 
+        margin-bottom: 25px;
+        color: black;
+        border-bottom: 4px solid var(--primary-red); /* Thicker red line */
+        padding-bottom: 10px; /* More padding below the line */
+        display: inline-block;
+        letter-spacing: 1px;
+    }
+
+    .content-block img {
+        width: 100%;
+        height: auto;
+        display: block;
+        background-color: var(--grey-box); 
+        margin-bottom: 25px; 
+        min-height: 280px; 
+        object-fit: cover;
+        border-radius: 8px; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    }
+
+    .content-block p {
+        font-size: 1rem;
+        line-height: 1.7; 
+        color: black;
+        margin-top: 0; 
+    }
+
+
+    .contact-form-section {
+        background-color: #000;
+        color: #fff;
+        padding: 60px 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap; 
+    }
+
+    /* 1. Logo and Contact Info Column (Left Side) */
+    .contact-left-column {
+        flex: 1; 
+        max-width: 45%; 
+        margin-right: 5%; 
+        display: flex;
+        flex-direction: column; 
+    }
+
+    /* 2. Logo Styling (Far Left) */
+    .contact-form-section .footer-logo {
+        width: 120px;
+        height: auto;
+        margin-bottom: 20px; 
+    }
+    
+    /* Contact Text Info Block */
+    .contact-form-section .contact-info {}
+
+    .contact-form-section .contact-info h4 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .contact-form-section .contact-info h5 {
+        font-size: 1.2rem;
+        font-weight: normal;
+        margin-bottom: 20px;
+    }
+
+    .contact-form-section .contact-info p {
+        margin: 5px 0;
+        font-size: 0.9rem;
+    }
+
+    /* 3. Contact Form (Right Side) */
+    .contact-form-section .contact-form {
+        flex: 1;
+        max-width: 50%;
+    }
+
+    .contact-form-section .contact-form form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Input/Textarea Grouping */
+    .contact-form-section .contact-form form input[type="text"],
+    .contact-form-section .contact-form form input[type="email"],
+    .contact-form-section .contact-form form textarea { 
+        background: none;
+        border: none;
+        border-bottom: 1px solid #fff;
+        color: #fff;
+        padding: 10px 0;
+        font-size: 1rem;
+        width: 100%; 
+    }
+
+    .contact-form-section .contact-form form textarea {
+        resize: vertical;
+        min-height: 80px;
+    }
+
+    /* Placeholder Styling */
+    .contact-form-section .contact-form form input::placeholder,
+    .contact-form-section .contact-form form textarea::placeholder {
+        color: rgba(255, 255, 255, 0.7); 
+    }
+
+    /* Submit Button Styles */
+    .contact-form-section .contact-form form button {
+        background-color: #fff;
+        color: #000;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        text-transform: uppercase;
+        align-self: flex-start;
+        transition: background-color 0.3s;
+        border-radius: 4px;
+    }
+
+    .contact-form-section .contact-form form button:hover {
+        background-color: gray;
+    }
