@@ -1,18 +1,22 @@
 <div class="services-container">
-    <h1>Our Full Range of Services</h1>
-    <p class="subtitle">We're more than just a dealership; we're your partner in car ownership. Our services are designed to make buying and owning a used car simple, safe, and stress-free.</p>
+    <h1>Our Services</h1>
+
+    <div class="top-banner">
+        <img src="herobannerservices.jpg">
+    </div>
+
+    <p class="subtitle">
+        We're more than just a dealership; we're your partner in car ownership.
+    </p>
 
     <div class="services-grid">
         @for (service of carServices; track service.title) {
             <div class="service-card">
-                <span class="service-icon">{{ service.icon }}</span>
+                <div class="service-icon">{{ service.icon }}</div>
                 <h2>{{ service.title }}</h2>
                 <p>{{ service.description }}</p>
+                <a class="more-link" href="#">MORE</a>
             </div>
         }
-    </div>
-
-    <div class="contact-prompt">
-        Questions about our inspection process or financing? <a href="/contact">Contact us today!</a>
     </div>
 </div>

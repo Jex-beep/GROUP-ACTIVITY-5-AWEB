@@ -1,23 +1,27 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
-import { Error } from './error';
 
-describe('Error', () => {
-  let component: Error;
-  let fixture: ComponentFixture<Error>;
+@Component({
+  selector: 'app-error',
+  standalone: true,
+  imports: [],
+  templateUrl: './error.html', 
+  styleUrl: './error.css',
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [Error]
-    })
-    .compileComponents();
+})
 
-    fixture = TestBed.createComponent(Error);
-    component = fixture.componentInstance;
-    await fixture.whenStable();
-  });
+export class ErrorComponent { 
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+  errorCode: number = 404;
+  errorMessage: string = 'Page Not Found';
+
+  constructor(private router: Router) { // Inject the Router
+
+  }
+
+  goToHome(): void {
+    this.router.navigate(['/']);
+  }
+
+}
