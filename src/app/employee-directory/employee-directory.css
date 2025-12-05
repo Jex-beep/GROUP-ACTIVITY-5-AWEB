@@ -1,0 +1,11 @@
+/* Style for the row when it is selected */
+.selected-row {
+  background-color: #e0f7fa; /* A light blue highlight */
+  font-weight: bold;
+  cursor: pointer; /* Change cursor to indicate interactivity */
+}
+
+/* Optional: Add a subtle hover effect */
+tr:hover {
+    background-color: #f1f1f1;
+}

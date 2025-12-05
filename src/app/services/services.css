@@ -1,0 +1,73 @@
+.services-container {
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.services-container h1 {
+    color: #004d99;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.services-grid {
+    display: grid;
+    /* Create three columns, or fewer on smaller screens */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+}
+
+.service-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+    font-size: 3em;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.service-card h2 {
+    color: #333;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    color: #555;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+.contact-prompt {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #e6f0ff; /* Light blue background */
+    border-radius: 8px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.contact-prompt a {
+    color: #cc0000;
+    text-decoration: none;
+    font-weight: bold;
+}

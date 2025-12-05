@@ -1,0 +1,111 @@
+<h2>Employee Directory</h2>
+
+<div style="border: 2px solid #ccc; padding: 20px; margin-bottom: 20px;">
+    <h3>➕ Add New Employee</h3>
+    <form (ngSubmit)="addEmployee()">
+        <p>
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" [(ngModel)]="newEmployee.fullName" required>
+        </p>
+        <p>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" [(ngModel)]="newEmployee.email" required>
+        </p>
+        <p>
+            <label for="salary">Salary:</label>
+            <input type="number" id="salary" name="salary" [(ngModel)]="newEmployee.salary" required min="1">
+        </p>
+        <p>
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" [(ngModel)]="newEmployee.phone">
+        </p>
+        <p>
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" [(ngModel)]="newEmployee.gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </p>
+        <p>
+            <label for="department">Department:</label>
+            <select id="department" name="department" [(ngModel)]="newEmployee.department">
+                @for (dept of departments; track dept) {
+                    <option [value]="dept">{{ dept }}</option>
+                }
+            </select>
+        </p>
+        <p>
+            <label for="hireDate">Hire Date:</label>
+            <input type="date" id="hireDate" name="hireDate" [(ngModel)]="newEmployee.hireDate">
+        </p>
+        <p>
+            <label for="status">Status:</label>
+            <select id="status" name="status" [(ngModel)]="newEmployee.status">
+                <option value="Regular">Regular</option>
+                <option value="Contractual">Contractual</option>
+                <option value="Probationary">Probationary</option>
+            </select>
+        </p>
+        
+        <button type="submit">Add Employee (Next No: {{ newEmployee.empNo }})</button>
+    </form>
+</div>
+
+---
+
+<table border="1" cellpadding="10">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Employee No</th>
+      <th>Full Name</th>
+      <th>Gender</th>
+      <th>Email</th>
+      <th>Department</th>
+      <th>Phone</th>
+      <th>Hire Date</th>
+      <th>Status</th>
+      <th>Salary</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    @for (emp of employees; track emp.empNo) { 
+      <tr 
+        (click)="selectEmployee(emp.empNo)" 
+        [class.selected-row]="emp.empNo === selectedEmpNo"
+      >
+        <td>{{ $index + 1 }}</td>
+        <td>{{ emp.empNo }}</td>
+
+        <td>{{ emp.fullName }}</td>
+        <td>{{ emp.gender }}</td>
+        <td>{{ emp.email }}</td>
+        <td>{{ emp.department }}</td>
+        <td>{{ emp.phone }}</td>
+        <td>{{ emp.hireDate | date:'mediumDate' }}</td>
+
+        <td>
+          @if (emp.status === 'Regular') {
+            <p style="color: green;">Regular</p>
+          }
+          @else if (emp.status === 'Contractual') {
+            <p style="color: orange;">Contractual</p>
+          }
+          @else {
+            <p style="color: blue;">Probationary</p>
+          }
+        </td>
+        <td>
+          @if (emp.salary >= 30000) {
+            <p>₱{{ emp.salary }} - High Earner</p>
+          }
+          @else {
+            <p>₱{{ emp.salary }} - Entry Level</p>
+          }
+        </td>
+
+      </tr>
+    }
+  </tbody>
+</table>
