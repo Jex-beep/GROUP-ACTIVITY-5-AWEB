@@ -99,16 +99,16 @@
     }
 
     .content-block img {
-        width: 100%;
-        height: auto;
-        display: block;
-        background-color: var(--grey-box); 
-        margin-bottom: 25px; 
-        min-height: 280px; 
-        object-fit: cover;
-        border-radius: 8px; 
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    }
+    width: 100%;
+    aspect-ratio: 1 / 1;   /* makes it a square */
+    object-fit: cover;
+
+    display: block;
+    background-color: var(--grey-box);
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
     .content-block p {
         font-size: 1rem;
