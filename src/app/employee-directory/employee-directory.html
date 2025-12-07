@@ -1,4 +1,7 @@
-<h2>Employee Directory</h2>
+<section class="page-header">
+    <div class="header-overlay"></div>
+    <h2>Employee Directory</h2>
+</section>
 
 <div class="add-employee-section">
     <h3>Add New Employee</h3>
@@ -48,68 +51,69 @@
                 </select>
             </p>
         </div>
-        
+
         <div class="submit-row">
             <button type="submit">Add Employee (Next No: {{ newEmployee.empNo }})</button>
         </div>
     </form>
 </div>
 
----
+<!-- ⬇ NEW CENTERED CARD WRAPPER FOR THE TABLE -->
+<div class="employee-table-container">
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Employee No</th>
+                <th>Full Name</th>
+                <th>Gender</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>Phone</th>
+                <th>Hire Date</th>
+                <th>Status</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
 
-<table border="1" cellpadding="10">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Employee No</th>
-      <th>Full Name</th>
-      <th>Gender</th>
-      <th>Email</th>
-      <th>Department</th>
-      <th>Phone</th>
-      <th>Hire Date</th>
-      <th>Status</th>
-      <th>Salary</th>
-    </tr>
-  </thead>
+        <tbody>
+            @for (emp of employees; track emp.empNo) { 
+            <tr 
+                (click)="selectEmployee(emp.empNo)" 
+                [class.selected-row]="emp.empNo === selectedEmpNo">
 
-  <tbody>
-    @for (emp of employees; track emp.empNo) { 
-      <tr 
-        (click)="selectEmployee(emp.empNo)" 
-        [class.selected-row]="emp.empNo === selectedEmpNo"
-      >
-        <td>{{ $index + 1 }}</td>
-        <td>{{ emp.empNo }}</td>
+                <td>{{ $index + 1 }}</td>
+                <td>{{ emp.empNo }}</td>
+                <td>{{ emp.fullName }}</td>
+                <td>{{ emp.gender }}</td>
+                <td>{{ emp.email }}</td>
+                <td>{{ emp.department }}</td>
+                <td>{{ emp.phone }}</td>
+                <td>{{ emp.hireDate | date:'mediumDate' }}</td>
 
-        <td>{{ emp.fullName }}</td>
-        <td>{{ emp.gender }}</td>
-        <td>{{ emp.email }}</td>
-        <td>{{ emp.department }}</td>
-        <td>{{ emp.phone }}</td>
-        <td>{{ emp.hireDate | date:'mediumDate' }}</td>
+                <td>
+                    @if (emp.status === 'Regular') {
+                        <p style="color: green;">Regular</p>
+                    }
+                    @else if (emp.status === 'Contractual') {
+                        <p style="color: orange;">Contractual</p>
+                    }
+                    @else {
+                        <p style="color: blue;">Probationary</p>
+                    }
+                </td>
 
-        <td>
-          @if (emp.status === 'Regular') {
-            <p style="color: green;">Regular</p>
-          }
-          @else if (emp.status === 'Contractual') {
-            <p style="color: orange;">Contractual</p>
-          }
-          @else {
-            <p style="color: blue;">Probationary</p>
-          }
-        </td>
-        <td>
-          @if (emp.salary >= 30000) {
-            <p>₱{{ emp.salary }} - High Earner</p>
-          }
-          @else {
-            <p>₱{{ emp.salary }} - Entry Level</p>
-          }
-        </td>
+                <td>
+                    @if (emp.salary >= 30000) {
+                        <p>₱{{ emp.salary }} - High Earner</p>
+                    }
+                    @else {
+                        <p>₱{{ emp.salary }} - Entry Level</p>
+                    }
+                </td>
 
-      </tr>
-    }
-  </tbody>
-</table>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

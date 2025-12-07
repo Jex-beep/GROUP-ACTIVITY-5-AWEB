@@ -1,247 +1,458 @@
-
-
-
-
-
-
-
-
-/* Color Palette */
 :root {
-    --primary-red: #a30000; /* M&J Primary Red */
+    --primary-red: #a30000;
     --primary-black: #000;
-    --secondary-grey: #f9f9f9; /* Light background for sections */
     --text-light: #fff;
     --text-dark: #333;
+    --grey-box: #ccc;
+    --card-bg: #ffffff;
+    --hover-bg: #f8f9fa;
     --border-color: #e0e0e0;
 }
 
-/* --- BASE CONTAINER & HEADING --- */
-.employee-directory-container {
-    padding: 30px 20px;
-    max-width: 1400px; 
-    margin: 0 auto;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--text-light);
+/* ================================
+   EMPLOYEE DIRECTORY HEADER IMAGE
+================================ */
+.page-header {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background-image: url('/herobanner.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.page-header h2 {
+    color: white;
+    font-size: 2.5rem;
+    z-index: 2;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.page-header .header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+
+/* MAIN CONTAINER - CENTERED CONTENT */
+body {
+    background-color: #f5f7fa;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 h2 {
-    color: var(--primary-black);
-    border-bottom: 4px solid var(--primary-red);
-    padding-bottom: 12px;
-    margin-bottom: 35px;
-    text-transform: uppercase;
-    font-size: 2.2em;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-/* --- SEARCH BAR SECTION (Add this if you are implementing search) --- */
-/*
-.search-bar {
-    margin-bottom: 30px;
-}
-.search-bar input[type="text"] {
-    width: 100%;
-    padding: 14px 20px;
-    border: 2px solid var(--primary-red);
-    border-radius: 30px; 
-    font-size: 1.1em;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-*/
-
-/* --- ADD NEW EMPLOYEE FORM CONTAINER --- */
-.add-employee-section {
-    border: 1px solid var(--border-color);
-    background-color: var(--secondary-grey);
-    padding: 30px;
-    margin-bottom: 40px;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-.add-employee-section h3 {
-    color: var(--primary-red);
-    margin-top: 0;
-    margin-bottom: 30px;
-    font-size: 1.8em;
-    font-weight: 600;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 10px;
-}
-
-/* --- FORM INPUTS (Designed for Grid Layout) --- */
-.add-employee-form-grid {
-    display: grid;
-    /* Creates a responsive grid of at least 280px wide columns */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-    gap: 20px 40px;
-}
-
-.add-employee-form-grid p {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-}
-
-.add-employee-section label {
-    font-weight: 600;
-    color: var(--text-dark);
-    margin-bottom: 6px;
-    font-size: 0.95em;
-    text-transform: uppercase;
-}
-
-.add-employee-section input,
-.add-employee-section select {
-    /* Base appearance */
-    padding: 12px 15px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1em;
-    width: 100%;
-    box-sizing: border-box;
-    background-color: var(--text-light); 
-    
-    /* Focus and Transition */
-    transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-/* Focus State (Red line on focus) */
-.add-employee-section input:focus,
-.add-employee-section select:focus {
-    border-color: var(--primary-red);
-    box-shadow: 0 0 0 3px rgba(163, 0, 0, 0.1); 
-    outline: none;
-}
-
-/* Submit Button Row */
-.submit-row {
-    grid-column: 1 / -1; /* Spans across all columns */
-    margin-top: 25px;
     text-align: center;
 }
 
-.add-employee-section button[type="submit"] {
-    background-color: var(--primary-black);
-    color: var(--text-light);
-    border: none;
-    padding: 14px 40px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: background-color 0.3s, transform 0.1s;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+.employee-directory-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
 }
 
-.add-employee-section button[type="submit"]:hover {
-    background-color: #333;
-    transform: translateY(-2px);
+/* PAGE HEADER - CENTERED */
+.employee-directory-container > h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-black);
+    margin-bottom: 50px;
+    text-align: center;
 }
 
-
-/* --- EMPLOYEE DATA TABLE --- */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 30px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    background-color: var(--text-light);
-    border-radius: 8px;
-    overflow: hidden; 
-}
-
-table th {
-    background-color: var(--primary-red);
-    color: var(--text-light);
-    padding: 14px 18px;
+/* ========================================
+   ADD EMPLOYEE SECTION - CENTERED CARD
+======================================== */
+.add-employee-section {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 35px;
+    margin: 0 auto 60px auto;
+    max-width: 900px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     text-align: left;
+}
+
+.add-employee-section h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-black);
+    margin-bottom: 25px;
     text-transform: uppercase;
-    font-size: 0.9em;
-    letter-spacing: 0.5px;
-    font-weight: 600;
+    letter-spacing: 1px;
 }
 
-table td {
-    padding: 12px 18px;
-    border-bottom: 1px solid var(--border-color);
-    color: var(--text-dark);
-    font-size: 0.9em;
+/* FORM GRID - 2 COLUMNS FOR COMPACT LAYOUT */
+.add-employee-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 25px;
 }
 
-/* Row Styling */
-table tbody tr {
-    transition: background-color 0.2s ease;
-    cursor: pointer;
-}
-
-table tbody tr:last-child td {
-    border-bottom: none;
-}
-
-/* Hover Effect */
-tr:hover {
-    background-color: #f1f1f1;
-}
-
-/* Selected Row Highlight */
-.selected-row {
-    background-color: #ffe6e6 !important; /* Soft red selection */
-    font-weight: bold;
-    border-left: 5px solid var(--primary-red); 
-}
-
-/* Status/Salary Indicators (Pill Tags) */
-table td p {
+.add-employee-form-grid p {
     margin: 0;
-    padding: 4px 8px;
-    border-radius: 15px; 
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-employee-form-grid label {
+    font-size: 0.85rem;
     font-weight: 600;
-    font-size: 0.85em;
+    color: #555;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
 }
 
-/* Color coding for Status */
-table td p[style*="green"] { background-color: #e8f5e9; color: #388e3c; } /* Regular */
-table td p[style*="orange"] { background-color: #fff8e1; color: #ff8f00; } /* Contractual */
-table td p[style*="blue"] { background-color: #e3f2fd; color: #1e88e5; } /* Probationary */
-
-/* Price/Salary Tag */
-table td p:last-child {
-    background-color: var(--primary-red);
-    color: var(--text-light);
-    padding: 4px 10px;
+.add-employee-form-grid input,
+.add-employee-form-grid select {
+    padding: 11px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: all 0.2s ease;
+    background: #fafafa;
 }
 
-/* --- RESPONSIVE DESIGN --- */
-@media (max-width: 900px) {
-    .employee-directory-container {
-        overflow-x: auto;
-    }
-    table {
-        min-width: 1000px;
+.add-employee-form-grid input:focus,
+.add-employee-form-grid select:focus {
+    outline: none;
+    border-color: var(--primary-red);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(163, 0, 0, 0.08);
+}
+
+/* SUBMIT BUTTON */
+.submit-row {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.submit-row button {
+    background: var(--primary-red);
+    color: #000;
+    padding: 13px 40px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(163, 0, 0, 0.25);
+}
+
+.submit-row button:hover {
+    background: #8a0000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+}
+
+/* ========================================
+   EMPLOYEE CARDS GRID - LIKE SERVICES
+======================================== */
+
+/* Hide the table completely */
+
+/* Employee Cards Container */
+.employee-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Individual Employee Card */
+.employee-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 30px 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    border: 2px solid transparent;
+}
+
+.employee-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    border-color: var(--primary-red);
+}
+
+.employee-card.selected {
+    border-color: var(--primary-red);
+    background: rgba(163, 0, 0, 0.02);
+}
+
+/* Employee Number Badge */
+.employee-card .emp-number {
+    display: inline-block;
+    background: var(--primary-black);
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+/* Employee Name */
+.employee-card .emp-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary-black);
+    margin-bottom: 8px;
+}
+
+/* Department */
+.employee-card .emp-department {
+    font-size: 0.9rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Divider Line */
+.employee-card .divider {
+    width: 60px;
+    height: 3px;
+    background: var(--primary-red);
+    margin: 20px auto;
+}
+
+/* Contact Info */
+.employee-card .emp-contact {
+    text-align: left;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.employee-card .emp-contact p {
+    margin: 8px 0;
+    font-size: 0.9rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.employee-card .emp-contact strong {
+    color: var(--primary-black);
+    min-width: 70px;
+}
+
+.employee-card .emp-email {
+    color: #0066cc !important;
+    word-break: break-word;
+}
+
+.employee-card .emp-phone {
+    font-family: monospace;
+}
+
+/* Status Badge in Card */
+.employee-card .emp-status {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 15px;
+}
+
+.employee-card .status-regular {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.employee-card .status-contractual {
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}
+
+.employee-card .status-probationary {
+    background: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+/* Salary Info */
+.employee-card .emp-salary {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-black);
+}
+
+.employee-card .emp-salary-label {
+    font-size: 0.8rem;
+    color: #666;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Gender Badge */
+.employee-card .emp-gender {
+    display: inline-block;
+    background: #f0f0f0;
+    color: #555;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* Hire Date */
+.employee-card .emp-hire-date {
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 10px;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 1024px) {
+    .employee-cards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
     }
 }
 
 @media (max-width: 768px) {
+    .employee-directory-container {
+        padding: 40px 15px;
+    }
+
+    .employee-directory-container > h2 {
+        font-size: 2rem;
+    }
+
+    .add-employee-section {
+        padding: 25px 20px;
+    }
+
     .add-employee-form-grid {
-        grid-template-columns: 1fr; /* Single column layout on mobile */
+        grid-template-columns: 1fr;
+        gap: 15px;
     }
 
-    .submit-row {
-        grid-column: 1 / 2;
+    .submit-row button {
+        width: 100%;
+        padding: 14px 20px;
+    }
+
+    .employee-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .employee-card {
+        padding: 25px 20px;
     }
 }
 
-.selected-row {
-  background-color: #e0f7fa;
-  font-weight: bold;
-  cursor: pointer;
+/* ========================================
+   UTILITY
+======================================== */
+
+*:focus-visible {
+    outline: 2px solid var(--primary-red);
+    outline-offset: 2px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
-tr:hover {
-    background-color: #f1f1f1;
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #888;
+}
+
+.empty-state h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.empty-state p {
+    font-size: 1rem;
+}
+
+/* ========================================
+   TABLE IN CARD CONTAINER (MATCHES ADD EMPLOYEE BOX)
+======================================== */
+
+.employee-table-container {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 25px;
+    margin: 0 auto 60px auto;   /* Center horizontally */
+    max-width: 900px;           /* SAME WIDTH as Add Employee section */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    overflow-x: auto;           /* Prevents stretching on small screens */
+}
+
+/* Full table styling inside the card */
+.employee-table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Table headers */
+.employee-table-container th {
+    background: #f0f0f0;
+    padding: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+/* Table cells */
+.employee-table-container td {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    font-size: 0.9rem;
+}
+
+.employee-table-container tr:hover {
+    background: #f8f9fa;
 }
