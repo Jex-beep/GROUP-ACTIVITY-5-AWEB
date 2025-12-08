@@ -16,7 +16,7 @@ export class ErrorComponent {
   errorCode: number = 404;
   errorMessage: string = 'Page Not Found';
 
-  constructor(private router: Router) { // Inject the Router
+  constructor(private router: Router) { 
 
   }
 

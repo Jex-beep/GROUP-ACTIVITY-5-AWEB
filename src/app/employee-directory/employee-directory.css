@@ -422,10 +422,10 @@ html {
     background: var(--card-bg);
     border-radius: 12px;
     padding: 25px;
-    margin: 0 auto 60px auto;   /* Center horizontally */
-    max-width: 900px;           /* SAME WIDTH as Add Employee section */
+    margin: 0 auto 60px auto; 
+    max-width: 900px;           
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    overflow-x: auto;           /* Prevents stretching on small screens */
+    overflow-x: auto;          
 }
 
 /* Full table styling inside the card */

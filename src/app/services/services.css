@@ -124,6 +124,6 @@
     }
 
     .service-card {
-        width: 280px; /* keep same width even on mobile */
+        width: 280px;
     }
 }

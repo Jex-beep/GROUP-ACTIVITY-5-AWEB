@@ -24,7 +24,7 @@
     .hero-section {
         position: relative;
         height: 500px;
-        /* Placeholder URL for herobanner.jpg */
+   
         background-image: url('/herobanner.jpg');
         background-size: cover;
         background-position: center center;
@@ -53,18 +53,18 @@
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     }
 
-    /* Adjusted H1/H2 for the "About Us" page title seen in the screenshot */
+  
     .hero-text-container h1 {
-        font-size: 3.5rem; /* Smaller for simple page title */
+        font-size: 3.5rem;
         font-weight: normal;
         margin-bottom: 0;
     }
 
     .hero-text-container h2 {
-        display: none; /* Hide subtitle for this simple layout */
+        display: none; 
     }
     .hero-text-container p {
-        display: none; /* Hide paragraph for this simple layout */
+        display: none; 
     }
     /* End Hero Section */
 

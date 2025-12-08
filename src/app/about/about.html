@@ -27,11 +27,11 @@
                     </p>
                 </div>
 
-                <!-- Right Column: Our Commitment and Promise -->
+
                 <div class="content-block">
                     <h3 class="block-heading">our commitment and promise</h3>
                     
-                    <!-- Grey Box Image Placeholder -->
+
                     <img src="/promise.jpg" alt="Placeholder image representing commitment and quality assurance">
                     
                     <p>
@@ -53,7 +53,6 @@
         
         <!-- Left Column: Logo and Contact Info -->
         <div class="contact-left-column">
-            <!-- Placeholder for MJ logo -->
             <img src="/companylogo.jpg" alt="M J Logo" class="footer-logo">
 
             <div class="contact-info">
@@ -66,17 +65,13 @@
 
         <!-- Right Column: Contact Form -->
         <div class="contact-form">
-            <form (submit)="$event.preventDefault()"> <!-- Use (submit) to prevent default form submission in Angular context -->
-                <!-- Full Name -->
+            <form (submit)="$event.preventDefault()"> 
                 <input type="text" name="fullName" placeholder="Full Name" required>
                 
-                <!-- Email Address -->
                 <input type="email" name="emailAddress" placeholder="Email Address" required>
                 
-                <!-- Concern / Message -->
                 <textarea name="concern" placeholder="Concern"></textarea>
-                
-                <!-- Submit Button -->
+
                 <button type="submit">Submit</button>
             </form>
         </div>

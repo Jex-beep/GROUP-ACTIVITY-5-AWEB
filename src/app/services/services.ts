@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common'; // Needed for *ngFor or @for in the template
+import { CommonModule } from '@angular/common'; 
 
-// Define an interface for the service objects
+
 interface CarService {
   title: string;
   description: string;
@@ -16,7 +16,7 @@ interface CarService {
 })
 export class Services {
   
-  // Array of services offered by the dealership
+  // Array
   carServices: CarService[] = [
     {
       title: '150-Point Inspection',
@@ -41,6 +41,6 @@ export class Services {
   ];
 
   constructor() {
-    // Component initialization
+
   }
 }

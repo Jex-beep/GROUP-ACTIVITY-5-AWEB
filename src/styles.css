@@ -1,12 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
-/* In src/styles.css */
 
-/* Global Reset to remove default margins and padding */
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
     width: 100%;
-    /* OPTIONAL: Set a default background color */
+
     background-color: white; 
 }

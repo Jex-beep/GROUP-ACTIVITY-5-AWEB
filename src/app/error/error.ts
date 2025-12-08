@@ -5,16 +5,15 @@ import { Router } from '@angular/router';
   selector: 'app-error',
   standalone: true, 
   imports: [], 
-  templateUrl: './error.html', // Correctly referencing your error.html
+  templateUrl: './error.html', 
   styleUrl: './error.css',
 })
-export class ErrorComponent { // The class name used in app.routes.ts
+export class ErrorComponent { 
   
   errorCode: number = 404;
   errorMessage: string = 'Page Not Found';
 
   constructor(private router: Router) {
-    // Inject the Router
   }
 
   goToHome(): void {

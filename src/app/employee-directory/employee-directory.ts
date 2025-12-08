@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms'; 
 import { CommonModule } from '@angular/common'; 
 
-// Define an interface/type for better type safety
 interface Employee {
   empNo: number;
   fullName: string;
@@ -13,7 +12,6 @@ interface Employee {
   department: 'IT' | 'HR' | 'Finance' | 'Sales';
   hireDate: Date;
   phone: string;
-  // PHOTO PROPERTY REMOVED
 }
 
 @Component({
@@ -38,7 +36,6 @@ export class EmployeeDirectory {
       department: 'IT',
       hireDate: new Date('2022-08-15'),
       phone: '0917-123-4567',
-      // PHOTO DATA REMOVED
     },
     {
       empNo: 1002,
@@ -50,7 +47,6 @@ export class EmployeeDirectory {
       department: 'Sales',
       hireDate: new Date('2023-11-01'),
       phone: '0999-876-5432',
-      // PHOTO DATA REMOVED
     },
     {
       empNo: 1003,
@@ -62,7 +58,6 @@ export class EmployeeDirectory {
       department: 'HR',
       hireDate: new Date('2024-01-20'),
       phone: '0922-345-6789',
-      // PHOTO DATA REMOVED
     }
   ];
 
@@ -82,7 +77,6 @@ export class EmployeeDirectory {
       department: 'IT',
       hireDate: new Date(),
       phone: '',
-      // PHOTO PROPERTY REMOVED
     };
   }
 
